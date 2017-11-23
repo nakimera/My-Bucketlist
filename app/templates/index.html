@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Bucketlist</title>
+    <link href="../static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+   <script type="text/javascript" src="../static/js/npm.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+    
+
+    
+</head>
+<body>
+    <!--Carousel-->
+
+    <div class="container">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!--wrapper for slides-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="../static/images/bungee.jpg" alt="Bungee Jumping" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h1>Los Angeles</h1>
+                        <p>LA is always so much fun!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../static/images/bungee.jpg" alt="Chicago" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h1>Chicago</h1>
+                        <p>We love the big apple!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../static/images/skydiving.jpg" alt="Sky Diving" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h1>New York</h1>
+                        <p>Thank you, New york!</p>
+                    </div>
+                </div>
+            </div>
+            <!--left and right controls-->
+            <a class="left carousel-control" href="#myCarousel" role="button">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div><br>
+
+
+    <div class="container">
+        <div class="row">
+             <div class="col-md-1"></div><div class="col-md-2"><h2>Welcome to</h2> </div>
+        </div>
+        <div class="row">
+             <div class="col-md-3"></div> <div class="col-md-4"><h1>My Bucketlist</h1></div>
+        </div>
+        <div class="row">
+             <div class="col-md-1"></div><div class="col-md-10"><h3>where you can keep track of the things you want to do before you <mark>kick the bucket</mark></h3> 
+                <h4 class="text-primary"><i>Be your own hero and live it up!</i></h4>
+             </div><br>
+        </div><br>
+    </div>
+
+
+
+    <!--modal-->
+    <div class="container">
+        <div class="row">
+             <div class="col-md-3"></div><div class="col-md-3">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Make a List</button></div>
+     
+     <div class="col-md-2">
+         <div class="dropup">
+            <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown">My Lists
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="timeline.html">My Timeline</a></li>
+                <li class="divider"></li>
+                <li><a href="todo.html">To Do List</a></li>
+                
+            </ul>
+        </div>
+     </div>
+         
+    
+     
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!--modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2>Set your goal</h2>
+                    </div>
+                    <div class="modal-body" style="padding: 40px 50px;">
+                        <form role="form">
+                            <div class="input-group">
+                                <input id="goal" type="text" class="form-control" name="email" placeholder="Before I die I want to ...">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            </div><br>
+                         <div class="form-group">
+                             <label for="goal_type">Type of goal</label>
+                            <select class="form-control" id="sel1">
+                                <option>Entertainment</option>
+                                <option>Extreme & Sports</option>
+                                <option>Self-improvement</option>
+                                <option>Tastes & Treats</option>
+                                <option>Travel</option>
+                             </select>
+                        </div> 
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"> 
+                                    <label for="goal_type">Due Date:</label>
+                                </div>
+                              <div class="col-md-9">    
+                                <div class="input-group date" id="datetimepicker1">
+                                <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY"/>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                             </div> 
+                             <script>
+                             $(document).ready(function(){
+                                 var date_input=$('input[name="date"]');
+                                var container=$('.bootstrap-iso form').length>0? $('.bootstrap-iso form').parent():"body";
+                                var options={
+                                    format:'dd/mm/yyyy',
+                                    container:container,
+                                    todayHighlight:true,
+                                    autoclose:true,
+                                };
+                                date_input.datepicker(options);
+                             })
+                             </script>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="comment">Notes:</label>
+                             <textarea class="form-control" rows="5" id="comment" placeholder="What inspired you?"></textarea>
+                         </div>
+                         <button type="submit" class="btn btn-success btn-block" data-dismiss="modal">
+                             <span class="glyphicon glyphicon-plus">Add
+                        </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
